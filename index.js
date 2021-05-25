@@ -17,7 +17,7 @@ const isDevelopment = process.env.ENV === 'development';
 
 const DEFAULT_PORT = 3000;
 const ROOT_NODE_ADDRESS = isDevelopment?`http://localhost:${DEFAULT_PORT}`:'https://crypto-grey.herokuapp.com';
-const REDIS_URL=isDevelopment?'redis://127.0.0.1:6379':'redis://:p376222b79f9444e7d8e8afb54bbe5014705e0a6179370ad4ea8805a9d2f798a1@ec2-52-6-122-229.compute-1.amazonaws.com:25460'
+const REDIS_URL=isDevelopment?'redis://127.0.0.1:6379':'redis://:p376222b79f9444e7d8e8afb54bbe5014705e0a6179370ad4ea8805a9d2f798a1@ec2-52-6-122-229.compute-1.amazonaws.com:25459';
 
 
 
