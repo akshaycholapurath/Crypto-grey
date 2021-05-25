@@ -11,14 +11,14 @@ class Transactionpool extends Component {
     }
 
     componentDidMount(){
-        fetch('http://localhost:3001/api/transactionpool')
+        fetch(`${document.location.origin}/api/transactionpool`)
         .then(res=>res.json())
         .then(data=>this.setState({transactionmap:data}));
     }
 
     mineTransaction(){
         
-        fetch('http://localhost:3001/api/minetransactions')
+        fetch(`${document.location.origin}/api/minetransactions`)
         .then(res=>{
             if(res.status===200){
                 alert('Sucess !!!')

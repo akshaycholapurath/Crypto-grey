@@ -10,7 +10,7 @@ class Maincomponent extends Component {
     }
 
     componentDidMount(){
-        fetch('http://localhost:3001/api/walletinfo')
+        fetch(`${document.location.origin}/api/walletinfo`)
         .then(res=>res.json())
         .then(data=>this.setState({walletinfo:data}))
     }
@@ -20,7 +20,7 @@ class Maincomponent extends Component {
     render(){
         const {address,balance} = this.state.walletinfo;
         return (
-        <div>
+        <div className="maincontainer">
             <h3 >Welcome To Crypto-grey</h3>
             <div className='CryptoInfo'>
                 Crypto-grey is a type of cryptocurrency which is build on top of the blockchain technology and is created using node js.

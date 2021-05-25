@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname,'frontend/dist')));
 
 const isDevelopment = process.env.ENV === 'development';
 
-const DEFAULT_PORT = 3001;
+const DEFAULT_PORT = 3000;
 const ROOT_NODE_ADDRESS = `http://localhost:${DEFAULT_PORT}`;
 const REDIS_URL=isDevelopment?'redis://127.0.0.1:6379':'';
 
@@ -78,6 +78,20 @@ app.post('/api/mine',(req,res)=>{
 
     res.json(blockchain.chain);
 });
+
+app.get('/api/knownaddress',(req,res)=>{
+    const addressMap = {};
+
+    for (let block of blockchain.chain){
+        for(let transaction of block.data){
+            const recipients = Object.keys(transaction.outputMap)
+
+            recipients.forEach(recipient=>addressMap[recipient]=recipient);
+        }
+    }
+    res.json(Object.keys(addressMap));
+});
+
 
 app.get('*',(req,res)=>{
     res.sendFile(path.join(__dirname,'frontend/dist/index.html'))

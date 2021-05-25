@@ -2,6 +2,19 @@
   text-align: center;
 }
 
+.maincontainer {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+}
+h3 {
+  margin-bottom: 10px;
+}
+h3:hover {
+  color: rgb(46, 43, 43);
+  text-shadow: #282c34;
+}
+
 .transaction {
   padding: 2%;
   margin: 2%;
@@ -52,7 +65,7 @@ a:hover {
 }
 
 .WalletInfo {
-  width: 500px;
+  width: 100%;
   text-align: left;
 }
 .walcol {
@@ -62,6 +75,13 @@ a:hover {
 
 .CryptoInfo {
   font-size: small;
-  width: 700px;
+  width: 100%;
   text-align: center;
+}
+
+.address {
+  width: 100%;
+  text-align: left;
+  font-size: small;
+  opacity: 0.8;
 }
